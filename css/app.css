@@ -1,0 +1,15 @@
+
+
+@media print {
+    .oculto-impresion,
+    .oculto-impresion * {
+        display: none !important;
+    }
+
+    main {
+        float:none;
+    } 
+    @page {
+        margin:2cm;
+    {
+}

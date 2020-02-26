@@ -1,8 +1,8 @@
- 
- 
+
 
 <?php
 include('db.php');
+include('../includes/headerTwo.php');
   if(isset($_GET['id'])){
        $id = $_GET['id'];
 
@@ -16,6 +16,8 @@ include('db.php');
          $code = $row['cod_inv'];
          $codeTwo = $row['cod_pro'];
          $description = $row['nom_pro'];
+         $price = $row['pro_price'];
+         $cant = $row['quantity'];
       }              
             
 
@@ -26,8 +28,10 @@ include('db.php');
    if(isset($_POST['update_product'])){
     $id = $_GET['id'];
     $newInfo = $_POST['new'];
+    $newInfo2 = $_POST['new2'];
+    $newInfo3 = $_POST['new3'];
 
-      $query = "UPDATE  inventario_excel set nom_pro ='$newInfo' WHERE id = $id ";
+      $query = "UPDATE  inventario_excel set nom_pro ='$newInfo', pro_price='$newInfo2', quantity='$newInfo3' WHERE id = $id ";
       mysqli_query($conn, $query);
       $_SESSION['msm'] = "Actualizado  con exito...";
       $_SESSION['logo'] = "<i class='fas fa-smile-beam'></i>";
@@ -48,7 +52,11 @@ include('db.php');
                                     <label for="name_product">Codigo del Producto</label>
                                     <input type="text" value="<?php echo $code.$codeTwo; ?>" class="form-control" disabled>
                                     <label for="name_product">Descripci&oacute;n del Producto</label>
-                                    <input type="text" name="new" class="form-control" value="<?php echo $description; ?>" placeholder="Ingrese nombre del producto" required>
+                                    <input type="text" name="new" class="form-control" value="<?php echo $description; ?>" placeholder="Ingrese precio del producto" required>
+                                    <label for="name_product">Precio del Producto</label>
+                                    <input type="text" name="new2" class="form-control" value="<?php echo $price; ?>" placeholder="Ingrese nombre del producto" required>
+                                    <label for="name_product">Cantidad de Productos</label>
+                                    <input type="text" name="new3" class="form-control" value="<?php echo $cant; ?>" placeholder="Ingrese cantidad de productos" required>
                                 </div> 
                               <button name="update_product" class="btn btn-primary">Actualizar <i class="fas fa-edit"></i></button>
                   </form>

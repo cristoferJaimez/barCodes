@@ -7,6 +7,8 @@
                 if(isset($_POST['save_product'])){
                      $cod_inv = $_POST['category'];
                      $nom_pro = $_POST['name_product'];
+                     $price_prod = $_POST['price_product'];
+                     $quantity_prod = $_POST['quantity_product'];
 
                      $query = "SELECT * FROM  inventario_excel WHERE cod_inv='$cod_inv' ORDER BY  cod_pro ASC" ;
                      $result = mysqli_query($conn, $query);
@@ -18,14 +20,16 @@
                       
                          
                          if($cod_prod == ""){
-                            $code = "0001";
+                            $code = "00001";
                          }else if($cod_prod < 10){
-                           $code = "000".$cod_prod;
+                           $code = "0000".$cod_prod;
                          }else if($cod_prod < 100){
-                          $code = "00".$cod_prod;
+                          $code = "000".$cod_prod;
                         }else if($cod_prod < 1000){
-                          $code = "0".$cod_prod;
+                          $code = "00".$cod_prod;
                         }else if($cod_prod < 10000){
+                          $code = "0".$cod_prod;
+                        }else{
                           $code = $cod_prod;
                         }
                            
@@ -33,7 +37,7 @@
                       
                  
 
-                        $query = "INSERT INTO inventario_excel(cod_inv,cod_pro,nom_pro) VALUES('$cod_inv','$code','$nom_pro')";
+                        $query = "INSERT INTO inventario_excel(cod_inv,cod_pro,nom_pro,pro_price,quantity) VALUES('$cod_inv','$code','$nom_pro','$price_prod','$quantity_prod')";
                         $result = mysqli_query($conn, $query);
 
                               if(!$result){

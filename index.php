@@ -48,12 +48,17 @@
                                 <div class="form-group">
                                 <label for="name_product">Descripci&oacute;n del Producto</label>
                                     <input type="text" name="name_product" class="form-control" placeholder="Ingrese nombre del producto" required>
+                               
+                                <label for="name_product">Precio</label>
+                                    <input type="number" name="price_product" class="form-control" placeholder="Ingrese precio del producto" required>
+
+                                    <label for="name_product">Cantidad</label>
+                                    <input type="number" name="quantity_product" class="form-control" placeholder="cantidad de productos" required>
                                 </div> 
-                                <input type="submit" class="btn btn-success" name="save_product" value="Guardar">
+                                
+                                <input type="submit" class="btn btn-success btn-block" name="save_product" value="Guardar">
                             </div>
-                            <div class="card-footer"><p>Descripcion del Producto
-                                  
-                            </p></div>
+                            <div class="card-footer"><p>Descripcion del Producto</p></div>
                     </div>    
              
            
@@ -61,7 +66,7 @@
          
             <div class="col-md-12">
             <p><a href="php/xls.php" class=" btn btn-primary">  EXCEL <i class="fas fa-file-excel"></i></a> </p>
-            
+                                      
                 <div class="card">
                 
                      <div class="card-body">
@@ -69,10 +74,12 @@
                             <thead>
                                 <th>Codigo Grupo de Inventario</th>
                                 <th>Codigo del Producto</th>
-                                <th>Nombre del Producto</th>
+                                <th>Descripci&oacute;n del Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
                                 <th></th>
                             </thead>
-                            <tbody>
+                            <tbody class=" ">
                                  <tr>
                                  <?php 
                                     $query = "SELECT * FROM inventario_excel ORDER BY  cod_pro DESC";
@@ -85,7 +92,11 @@
                                      <td><?php echo $row['cod_inv']; ?></td>
                                      <td><?php echo $row['cod_inv'].$row['cod_pro']; ?></td>
                                      <td><?php echo $row['nom_pro']; ?></td>
+                                     <td>COP <?php echo $row['pro_price']; ?></td>
+                                     <td><?php echo $row['quantity']; ?></td>
                                      <td>
+                                     
+                                            <a href="php/barCode.php?cod_inv=<?php echo $row['cod_inv'];?>&cod_pro=<?php echo $row['cod_pro']; ?>"  class="btn btn-primary" title="imprimir" name="print"><i class="fas fa-print"></i></a>
                                             <a href="php/update.php?id=<?php echo $row['id']?>" class="btn btn-info" title="Editar" name="update"><i class="far fa-edit"></i></a>
                                             <a href="php/delete.php?id=<?php echo $row['id']?>" class="btn btn-danger" title="Borrar" name="delete"><i class="far fa-trash-alt"></i></a>
                                      </td>
@@ -96,11 +107,29 @@
                      </div>
                 </div>
               
-
+                <nav aria-label="Page navigation example">
+                      <ul class="pagination">
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
             </div>
-         
+          
         </div>
-
+                          
         
            
         </div>
@@ -231,6 +260,29 @@
                 </div>
               
       
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
   </div>
 </div>
