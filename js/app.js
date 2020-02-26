@@ -1,4 +1,15 @@
 function print() {
     window.print();
 }
-alert('aquii');
+
+
+        const buscar = document.querySelector("#formulario");
+
+            const filtro = ()=>{
+                 console.log(buscar.value);
+            }
+
+            buscar.addEventListener('keyup', filtro);
+
+                
+    

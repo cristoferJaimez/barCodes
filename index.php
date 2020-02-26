@@ -5,7 +5,7 @@
 
    
 
-<div class="container p-4">
+<div class="container p-1">
         <?php if(isset($_SESSION['msm'])){ ?>
             <div class="alert alert-<?php echo $_SESSION['color']; ?>" role="alert">
                 <?php echo $_SESSION['msm'].$_SESSION['logo'];  ?>
@@ -65,12 +65,48 @@
             </div>
          
             <div class="col-md-12">
-            <p><a href="php/xls.php" class=" btn btn-primary">  EXCEL <i class="fas fa-file-excel"></i></a> </p>
+              
+   
+              <br/>
+              <form>
+              <div class="row">
+                <div class="col-md-2">
+                <a href="php/xls.php" class=" btn btn-primary">  EXCEL <i class="fas fa-file-excel"></i></a>
+                </div>
+                <div class="col-md-4">
+                <!-- <nav aria-label="Page navigation example">
+                      <ul class="pagination">
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav> -->
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Buscador" id="formulario">
+                  </div>
+              </div>
+            </form>
+            <br/>           
+              
+               
                                       
                 <div class="card">
                 
                      <div class="card-body">
-                        <table class="table  table-striped table-sm">
+                        <table class="table table-sm  table-striped ">
                             <thead>
                                 <th>Codigo Grupo de Inventario</th>
                                 <th>Codigo del Producto</th>
@@ -107,25 +143,7 @@
                      </div>
                 </div>
               
-                <nav aria-label="Page navigation example">
-                      <ul class="pagination">
-                        <li class="page-item">
-                          <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                          </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                          <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </nav>
+              
             </div>
           
         </div>
@@ -161,37 +179,23 @@
                           $result = mysqli_query($conn, $query);
                           while (  $row = mysqli_fetch_array($result)){
                             $code = $row['code']+1;
+
+                             
                            
                           }
-                          switch ($code) {
-                            case $code ==="" :
-                              ?>
-                               <input type="text" name="code" class="form-control d-none" value="<?php echo "001" ?>" placeholder="Nueva Categoria">
-                               <b><?php echo "001" ?></b>
-                              <?php 
-                           break;
-                            case $code <10:
-                                 ?>
-                                  <input type="text" name="code" class="form-control d-none" value="<?php echo "00".$code ?>" placeholder="Nueva Categoria">
-                                  <b><?php echo "00".$code ?></b>
-                                 <?php 
-                              break;
-                            case $code>10 and $code <100:
-                                ?>
-                                <input type="text" name="code" class="form-control d-none" value="<?php echo "0".$code?>" placeholder="Nueva Categoria">
-                                <b><?php echo "0".$code ?></b>
-                               <?php 
-                             break;  
-                            
-                            default:
-                            ?>
-                            <input type="text" name="code" class="form-control d-none" value="<?php echo $code?>" placeholder="Nueva Categoria">
-                            <b><?php echo $code ?></b>
-                           <?php 
-                              break;
-                          }
-                         
+                          if($code === ""){
+                            $valor = 001;
+                            }else if($code < 10){
+                              $valor =   "00".$code;
+                           }else if($code >= 10){
+                              $valor =   "0".$code;
+                           }else if($code >= 100){
+                              $valor =  $code;
+                         }
                       ?>
+
+                                 <input type="text" name="code" class="form-control d-none" value="<?php echo $valor;?>" placeholder="Nueva Categoria">
+                                  <b><?php echo $valor;?></b>
                    
         </div> 
         <div class="form-group">
