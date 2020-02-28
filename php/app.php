@@ -1,4 +1,4 @@
-
+<script>
 function print() {
     window.print();
 }
@@ -7,16 +7,13 @@ function print() {
 
                     function search() {
 
-                        const buscar = document.querySelector("#formulario");   
-                        const pag = document.querySelector("#pag");        
+                        const buscar = document.querySelector("#formulario");          
                         
-                            let text = buscar.value;
-                            let pa = pag.value; 
-                            
+                            let text = buscar.value; 
+                           
                             console.log(text);
                             let parametro = {
-                                "text" : text,
-                                "pag"  : pa
+                                "text" : text
                                 
                             };
 
@@ -34,3 +31,4 @@ function print() {
                     }
 
                 
+</script>

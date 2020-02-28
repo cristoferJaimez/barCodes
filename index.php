@@ -1,7 +1,15 @@
-<?php include("php/db.php") ?>
-<?php include("includes/header.php") ?>
+<?php include("php/db.php"); ?>
+<?php require("includes/header.php");
+?> 
 
+<input class ="invisible" type="number" id="pag"  value="<?php 
+  if(!isset($_GET['pag'] )){
+     
+  }else{
+    echo $_GET['pag']; 
+  }
 
+?>"  onkeyup=" search();"/>
 
    
 
@@ -74,77 +82,20 @@
                 <a href="php/xls.php" class=" btn btn-primary">  EXCEL <i class="fas fa-file-excel"></i></a>
                 </div>
                 <div class="col-md-4">
-                <!-- <nav aria-label="Page navigation example">
-                      <ul class="pagination">
-                        <li class="page-item">
-                          <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                          </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                          <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </nav> -->
+              
                 </div>
                 <div class="col-md-6">
-                  <input type="text" class="form-control" placeholder="Buscador" id="formulario">
+                  <input type="text" class="form-control" placeholder="Buscador" id="formulario" onkeyup=" search();">
                   </div>
               </div>
             </form>
             <br/>           
               
-               
-                                      
-                <div class="card">
-                
-                     <div class="card-body">
-                        <table class="table table-sm  table-striped ">
-                            <thead>
-                                <th>Codigo Grupo de Inventario</th>
-                                <th>Codigo del Producto</th>
-                                <th>Descripci&oacute;n del Producto</th>
-                                <th>Precio</th>
-                                <th>Cantidad</th>
-                                <th></th>
-                            </thead>
-                            <tbody class=" ">
-                                 <tr>
-                                 <?php 
-                                    $query = "SELECT * FROM inventario_excel ORDER BY  cod_pro DESC";
-                                    $result = mysqli_query($conn, $query);
-                                     
-                                     while($row = mysqli_fetch_array($result)){
-
-                                 ?>
-                                     
-                                     <td><?php echo $row['cod_inv']; ?></td>
-                                     <td><?php echo $row['cod_inv'].$row['cod_pro']; ?></td>
-                                     <td><?php echo $row['nom_pro']; ?></td>
-                                     <td>COP <?php echo $row['pro_price']; ?></td>
-                                     <td><?php echo $row['quantity']; ?></td>
-                                     <td>
-                                     
-                                            <a href="php/barCode.php?cod_inv=<?php echo $row['cod_inv'];?>&cod_pro=<?php echo $row['cod_pro']; ?>"  class="btn btn-primary" title="imprimir" name="print"><i class="fas fa-print"></i></a>
-                                            <a href="php/update.php?id=<?php echo $row['id']?>" class="btn btn-info" title="Editar" name="update"><i class="far fa-edit"></i></a>
-                                            <a href="php/delete.php?id=<?php echo $row['id']?>" class="btn btn-danger" title="Borrar" name="delete"><i class="far fa-trash-alt"></i></a>
-                                     </td>
-                                 </tr>
-                                <?php }?>
-                            </tbody>
-                        </table>
-                     </div>
-                </div>
+               <div id="searching">
               
-              
-            </div>
+               </div>
+                                   
+             
           
         </div>
                           
@@ -269,26 +220,5 @@
 </div>
 
 
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 <?php include("includes/footer.php") ?>
  

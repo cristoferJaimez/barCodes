@@ -12,7 +12,7 @@ header("Expires: 0");
 
      include('db.php');
 
-      $query = "SELECT * FROM inventario_excel ORDER BY  cod_pro ASC";
+      $query = "SELECT * FROM inventario_excel ORDER BY  CONCAT(cod_inv,cod_pro) ASC";
       $result = mysqli_query($conn, $query);
        
 
@@ -29,7 +29,7 @@ header("Expires: 0");
         ?>
     <tr>
         <td  style="mso-number-format:'000';"><?php echo utf8_decode($row['cod_inv']); ?></td>
-        <td  style="mso-number-format:'0000000';"><?php echo utf8_decode($row['cod_inv'].$row['cod_pro']);?></td>
+        <td  style="mso-number-format:'00000000';"><?php echo utf8_decode($row['cod_inv'].$row['cod_pro']);?></td>
         <td><?php echo utf8_decode($row['nom_pro']); ?></td>
     </tr>
     <?php } ?>
