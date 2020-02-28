@@ -4,7 +4,7 @@
     
 
     //pagination
-      $limit=5;
+      $limit=10;
      
       $pag=(int)$_GET['pag'];
       if($pag<1){
@@ -24,7 +24,7 @@
 
     if($_GET['text'] != ""){
         $query = "SELECT id, cod_inv, cod_pro, nom_pro, pro_price, quantity FROM inventario_excel  
-                  WHERE nom_pro  LIKE '%".$tex."%'";
+                  WHERE nom_pro  LIKE '%".$tex."%' or cod_inv   LIKE '%".$tex."%'  or quantity   LIKE '%".$tex."%' ";
     }
 
     $tmp = "

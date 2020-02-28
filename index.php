@@ -13,7 +13,7 @@
 
    
 
-<div class="container p-1">
+<div class="container">
         <?php if(isset($_SESSION['msm'])){ ?>
             <div class="alert alert-<?php echo $_SESSION['color']; ?>" role="alert">
                 <?php echo $_SESSION['msm'].$_SESSION['logo'];  ?>
