@@ -26,7 +26,7 @@
        
 
 
-<div class="container p-4">
+<div  class="cuadro container p-4">
 
    <div class="card">
    <div class="card-header oculto-impresion">
@@ -51,7 +51,7 @@
                     <td>
                         <table class="">
                             <tr>
-                            <td  class="text-uppercase text-dark row justify-content-center "> <img src="../img/logo.jpg"  width="15px" height="15px"  class="rounded mr-2"/> <small class=""> <?php echo $nom_producto;?></small></td>
+                            <td  class="text-uppercase text-dark row justify-content-center  " style="font-size:11px;">  <small class="text"> <?php echo $nom_producto;?></small></td>
                             </tr>
                             <tr>
                             <td><img id="codigo" data-value='<?php echo $_GET['cod_inv'].$_GET['cod_pro']; ?>'/></td>
@@ -65,7 +65,7 @@
                     <td>
                         <table class="">
                             <tr>
-                            <td class="text-uppercase text-dark row justify-content-center "> <img src="../img/logo.jpg"  width="15px" height="15px"  class="rounded  mr-2"/> <small> <?php echo $nom_producto;?> </small></td>
+                            <td class="text-uppercase text-dark row justify-content-center " style="font-size:11px;">  <small class="text"> <?php echo $nom_producto;?> </small></td>
                             </tr>
                             <tr>
                             <td><img id="codigo" data-value='<?php echo $_GET['cod_inv'].$_GET['cod_pro']; ?>'/></td>
@@ -79,7 +79,7 @@
                     <td>
                         <table class="">
                             <tr class="">
-                            <td class="text-uppercase text-dark row justify-content-center " > <img src="../img/logo.jpg"  width="15px" height="15px"  class="rounded  mr-2"/> <small> <?php echo $nom_producto;?> </small></td>
+                            <td class="text-uppercase text-dark row justify-content-center "style="font-size:11px;" > <small class="text"> <?php echo $nom_producto;?> </small></td>
                             </tr>
                             <tr>
                             <td><img class="rounded mx-auto d-block" id="codigo" data-value='<?php echo $_GET['cod_inv'].$_GET['cod_pro']; ?>'/></td>
@@ -146,8 +146,8 @@
         echo ""?><script>JsBarcode("#codigo")
         .options({
             format: "CODE128",// El formato
-            width: 2, // La anchura de cada barra
-            height: 45, // La altura del código
+            width: 1.5, // La anchura de cada barra
+            height: 40, // La altura del código
             displayValue: true, // ¿Mostrar el valor (como texto) del código de barras?
             text: "Mundo Moda y Hogar", // Texto (no código) que acompaña al barcode
             fontOptions: "bold", // Opciones de la fuente del texto del barcode
@@ -157,10 +157,10 @@
             fontSize: 9, // Tamaño de la fuente
             background: "#ffffff", // Color de fondo
             lineColor: "#000000", // Color de cada barra
-            marginTop: 1, // Margen superior
-            marginRight: 30, // Margen derecho
-            marginBottom: 10, // Margen inferior
-            marginLeft: 30, // Margen izquierdo
+            marginTop: -1, // Margen superior
+            marginRight: 13, // Margen derecho
+            marginBottom: 1, // Margen inferior
+            marginLeft: 13 , // Margen izquierdo
         })
         .init();</script> <?php 
 

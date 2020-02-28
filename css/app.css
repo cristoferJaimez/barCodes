@@ -1,16 +1,16 @@
+body{
+    margin:0;
+    padding:0;
+}
 
-
-@media print and (orientation: portrait) {
-    .oculto-impresion,
-    .oculto-impresion * {
-        display: none !important;
-    }
-
-    main {
-        float:none;
-    } 
-    @page {
-        size: auto;/* auto is the initial value */
-        margin: 10%;
-        }
+.cuadro{
+    margin:0;
+    padding:0;
+    position: absolute;
+    top:-116px;
+    left: -235px;
+}
+.text{
+    letter-spacing:-1px;
+    font-size:11px;
 }
