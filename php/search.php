@@ -70,10 +70,10 @@
            
          
            $total_pag = ceil($rows/$limit);
-           $link = array();
+           $link = array(); 
           
            for($i=1; $i<=$total_pag;$i++){
-                 $link[]= "<a href=\"?pag=$i\"  class='btn btn-outline-secondary mt-2'>$i</a>";
+                 $link[]= "<a href=\"?pag=$i\"  class='btn btn-outline-secondary mt-2 '>$i</a>";
            }
            
          
