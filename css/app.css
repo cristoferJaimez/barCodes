@@ -1,6 +1,6 @@
 
 
-@media print {
+@media print and (orientation: portrait) {
     .oculto-impresion,
     .oculto-impresion * {
         display: none !important;
@@ -10,6 +10,7 @@
         float:none;
     } 
     @page {
-        margin:2cm;
-    {
+        size: auto;/* auto is the initial value */
+        margin: 10%;
+        }
 }
