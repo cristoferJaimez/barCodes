@@ -4,13 +4,46 @@ body{
 }
 
 .cuadro{
+    width: 15.3cm;
+    /*height: 3.5cm;*/
     margin:0;
     padding:0;
-    position: absolute;
-    top:-116px;
-    left: -235px;
+    /*border: solid 1px black;*/
 }
+
 .text{
     letter-spacing:-1px;
     font-size:11px;
 }
+
+.card-header, .fa-barcode{
+    display: none;
+}
+
+.card{
+
+}
+
+.tbl-principal{
+    width: 100%;
+}
+
+.tbl-etiqueta{
+    margin: auto;
+}
+
+.nom-producto{
+
+}
+
+p{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    line-height: initial;
+}
+
+img{
+    margin-left: 10px;
+}
+/*----*/

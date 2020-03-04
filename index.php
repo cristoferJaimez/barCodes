@@ -218,7 +218,7 @@
     </div>
   </div>
 </div>
-
+<script src="js/app.js" crossorigin="anonymous"></script>
 
 <?php include("includes/footer.php") ?>
  
