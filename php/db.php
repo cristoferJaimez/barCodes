@@ -1,10 +1,22 @@
 <?php 
 session_start();
 
+//************Cristofer*************
+/*
 $hosting ="localhost";
 $user="root";
 $pass="";
 $db = "mundo_moda";
+*/
+
+//************Yorman*************
+$hosting ="localhost";
+$user="root";
+$pass="root";
+$db = "barcode_siigo";
+
+
+//***********WEB*****************
 // $hosting ="localhost";
 // $usuario = "mundom_wp8";
 // $pass = "Sj@Z9pg3.2";

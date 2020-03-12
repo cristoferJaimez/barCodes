@@ -102,7 +102,7 @@
                         $query = $conn->prepare("INSERT INTO inventario_excel(cod_inv,cod_pro,nom_pro,price_cost,pro_price,quantity,store) VALUES(:cod_inv,:cod_pro,:nom_pro,:price_cost,:pro_price,:quantity,:store)");
                         echo $cod_inv = $_POST['category'];
                         echo $cod_pro = $codeA;
-                        echo $nom_pro = $_POST['name_product'];
+                        echo $nom_pro = strtoupper($_POST['name_product']);
                         echo $pro_price =$_POST['price_product'];
                         echo $pro_price_cost = $_POST['price_product_cost'];
                         echo $quantity = $_POST['quantity_product'];

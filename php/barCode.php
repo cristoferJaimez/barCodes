@@ -131,7 +131,15 @@
             marginLeft: 5 , // Margen izquierdo
         }).init();
         </script>
-        <script src="../js/app.js" crossorigin="anonymous"></script> 
+        <script src="../js/app.js" crossorigin="anonymous"></script>
+        <script>
+            window.addEventListener('afterprint', (event) => {
+                window.history.back();
+            });
+            $(window).ready(function() {
+                window.print();
+            });
+        </script> 
         <?php 
 
        include('../includes/footer.php');

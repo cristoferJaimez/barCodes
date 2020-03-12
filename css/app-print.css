@@ -4,6 +4,7 @@ body{
 }
 
 .cuadro{
+    visibility: visible;
     width: 15.3cm;
     /*height: 3.5cm;*/
     margin:0;
