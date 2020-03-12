@@ -16,7 +16,7 @@ header("Expires: 0");
 
      
 
-     $query = "SELECT * FROM inventario_excel where store = '$store' ORDER BY  cod_pro ASC ";
+     $query = "SELECT * FROM inventario_excel where store = '$store' ORDER BY   cod_inv,cod_pro ASC ";
      $result = $conn->query($query);
        
 
