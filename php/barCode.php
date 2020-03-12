@@ -20,7 +20,7 @@
 
 <!-- Inicio impresion -->
 
-<div class="cuadro">
+<div class="cuadro orden">
     <table  class="tbl-principal">
         <?php for($a = 0; $a < 1; $a++){ 
             if(strlen($nom_producto) > 30){
@@ -91,7 +91,7 @@
                $result = $conn->query($query);
 
                
-<<<<<<< HEAD
+
                   while($row = $result->fetch(PDO::FETCH_ASSOC)){  
     
                  $code = $row['cod_inv'];
@@ -100,24 +100,14 @@
 
                }
                  
-         }
+         
+            }
 
  
 
        
-=======
 
-            if(mysqli_num_rows($result)==1){
-                 $row = mysqli_fetch_array($result);
-                 $code = $row['cod_inv'];
-                 $codeTwo = $row['cod_pro'];
-                 $nom_producto = $row['nom_pro'];
-            }             
-                
-        }else{
-             echo "no exite";
-        }
->>>>>>> d664e95c13140c4f7cd0ef7378c1d2da1695db0b
+
 
       
 

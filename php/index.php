@@ -64,14 +64,13 @@
               <br/>
               <form>
               <div class="row">
-                <div class="col-md-2">
-                <a href="xls.php" class=" btn btn-primary">  EXCEL <i class="fas fa-file-excel"></i></a>
-                
+                <div class="col-md-4">
+                <a href="xls.php" class=" btn btn-primary">  <i class="fas fa-file-excel"></i> EXCEL Importaci&oacute;n</a>
                 </div>
                 <div class="col-md-4">
-              
+                <a href="xls2.php" class=" btn btn-primary"> <i class="fas fa-file-excel"></i>  EXCEL Saldo Inicial</a>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <input type="text" class="form-control" placeholder="Buscador" id="formulario" onkeyup=" search();">
                   </div>
               </div>

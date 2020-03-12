@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-<script src="../js/app.js" crossorigin="anonymous"></script>
-=======
 
->>>>>>> d664e95c13140c4f7cd0ef7378c1d2da1695db0b
+<script src="../js/app.js" crossorigin="anonymous"></script>
+
 <script src="https://kit.fontawesome.com/295af17a76.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
