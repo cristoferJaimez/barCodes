@@ -1,20 +1,15 @@
-
-<?php include('db.php');
+<?php 
  include('../includes/headerTwo.php'); 
  
     $id_pro = $_GET['id'];
 
  $query = "SELECT * FROM inventario_excel WHERE id = $id_pro";
- $result = mysqli_query($conn, $query);
+ $result = $conn->query($query);
 
- if(mysqli_num_rows($result)==1){
-     $row = mysqli_fetch_array($result);
-     
-     $nom_producto = $row['nom_pro'];
-     
-  } else{
-      
-  }           
+    while($row = $result->fetch(PDO::FETCH_ASSOC)){
+
+            $nom_producto =  $row['nom_pro'];
+    }
  
  
  ?>
@@ -120,26 +115,22 @@
 
               
                $query = "SELECT * FROM  inventario_excel WHERE cod_inv=$cod_inv and cod_pro=$cod_pro";
-               $result = mysqli_query($conn, $query);
+               $result = $conn->query($query);
 
                
-
-               if(mysqli_num_rows($result)==1){
-                 $row = mysqli_fetch_array($result);
+                  while($row = $result->fetch(PDO::FETCH_ASSOC)){  
+    
                  $code = $row['cod_inv'];
                  $codeTwo = $row['cod_pro'];
                  $nom_producto = $row['nom_pro'];
+
+               }
                  
-              } else{
-                  
-              }             
-                
+         }
 
  
 
-         }else{
-             echo "no exite";
-         }
+       
 
       
 

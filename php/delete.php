@@ -1,21 +1,15 @@
 <?php
    include('db.php');
 
-   if(isset($_GET['id'])){
-       $id =$_GET['id'];
+   if(isset($_POST['id'])){
+       $id =$_POST['id'];
 
-         $query ="DELETE FROM inventario_excel WHERE id ='$id'";
-         $result = mysqli_query($conn, $query);
+         $result = $conn->exec("DELETE FROM inventario_excel WHERE id ='$id'");
+         
            if(!$result){
-            $_SESSION['msm'] = "Opss, no se pudo Eliminar";
-            $_SESSION['logo'] = "<i class='fas fa-sad-cry'></i>";
-            $_SESSION['color'] = "danger";
-            header("location:../index.php");
+            die('fallas al eliminar producto');
            }else{
-            $_SESSION['msm'] = "Eliminado con exito...";
-            $_SESSION['logo'] = "<i class='fas fa-smile-beam'></i>";
-            $_SESSION['color'] = "warning";
-            header("location:../index.php");
+            echo "eliminado";
            }   
    }
 ?>

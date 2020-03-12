@@ -1,20 +1,14 @@
 <?php 
 include('db.php');
-if(isset($_GET['id'])){
-    $id =$_GET['id'];
+if(isset($_POST['id'])){
+    $id =$_POST['id'];
 
-      $query ="DELETE FROM category WHERE id ='$id'";
-      $result = mysqli_query($conn, $query);
+      $result= $conn->exec("DELETE FROM category WHERE id ='$id'");
+     
         if(!$result){
-         $_SESSION['msm'] = "Opss, no se pudo Eliminar";
-         $_SESSION['logo'] = "<i class='fas fa-sad-cry'></i>";
-         $_SESSION['color'] = "danger";
-         header("location:../index.php");
+         die("problemas al eliminar");
         }else{
-         $_SESSION['msm'] = "Eliminado con exito...";
-         $_SESSION['logo'] = "<i class='fas fa-smile-beam'></i>";
-         $_SESSION['color'] = "success";
-         header("location:../index.php");
+          echo "Delete ok...";
         }
     }
 ?>
