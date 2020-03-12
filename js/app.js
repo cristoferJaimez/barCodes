@@ -119,6 +119,7 @@
         const postDate = {
             'category':$('#category').val(),
             'name_product':$('#name_product').val(),
+            'price_product_cost':$('#price_product_cost').val(),
             'price_product':$('#price_product').val(),
             'quantity_product':$('#quantity_product').val()
         };

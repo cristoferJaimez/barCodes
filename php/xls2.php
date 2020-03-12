@@ -26,7 +26,7 @@ header("Expires: 0");
     <tr>
         <th style='background:#CCC; color:#000'>C&oacute;digo de Producto</th>
         <th style='background:#CCC; color:#000'>Nombre del Producto</th>
-        <th style='background:#CCC; color:#000'>Referencia de F&acute;brica</th>
+        <th style='background:#CCC; color:#000'>Referencia de F&aacute;brica</th>
         <th style='background:#CCC; color:#000'>C&oacute;digo de Bodega</th>
         <th style='background:#CCC; color:#000'>C&oacute;digo centro/subcentro</th>
         <th style='background:#CCC; color:#000'>Cantidad</th>
@@ -36,13 +36,13 @@ header("Expires: 0");
       while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         ?>
     <tr>
-        <td></td>
-        <td  style="mso-number-format:'000';"><?php echo utf8_decode($row['cod_inv'].$row['cod_pro']);?></td>
+        <td  style="mso-number-format:'00000000';"><?php echo utf8_decode($row['cod_inv'].$row['cod_pro']);?></td>
+        <td ></td>
         <td  style="mso-number-format:'00000000';"></td>
         <td></td>
         <td></td>
         <td></td>
-        <td  style="mso-number-format:'00000000';"></td>
+        <td  style=""><?php echo utf8_decode($row['price_cost']);?></td>
         
     </tr>
     <?php } ?>

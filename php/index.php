@@ -43,8 +43,12 @@
                                 <label for="name_product">Descripci&oacute;n del Producto</label>
                                     <input type="text" name="name_product" id="name_product" class="form-control" placeholder="Ingrese nombre del producto" required>
                                
-                                <label for="name_product">Precio</label>
-                                    <input type="number" name="price_product" id="price_product" class="form-control" placeholder="Ingrese precio del producto" required>
+                                    <label for="name_product">Precio de Costo </label>
+                                    <input type="number" name="price_product_cost" id="price_product_cost" class="form-control" placeholder="precio de costo del producto" required>
+
+
+                                <label for="name_product">Precio de Venta</label>
+                                    <input type="number" name="price_product" id="price_product" class="form-control" placeholder="precio del producto" required>
 
                                     <label for="name_product">Cantidad</label>
                                     <input type="number" name="quantity_product" id="quantity_product" class="form-control" placeholder="cantidad de productos" required>
