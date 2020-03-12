@@ -41,7 +41,7 @@ header("Expires: 0");
         <td  style="mso-number-format:'00000000';"></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td><?php echo utf8_decode($row['quantity']);?></td>
         <td  style=""><?php echo utf8_decode($row['price_cost']);?></td>
         
     </tr>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 26-02-2020 a las 20:55:52
+-- Tiempo de generación: 12-03-2020 a las 16:35:30
 -- Versión del servidor: 10.4.10-MariaDB
 -- Versión de PHP: 7.3.12
 
@@ -34,23 +34,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `code` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `category` varchar(20) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=58 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `category`
---
-
-INSERT INTO `category` (`id`, `code`, `category`) VALUES
-(47, '001', 'Acostumbradores'),
-(48, '002', 'Bermudas'),
-(49, '003', 'Blumeres'),
-(50, '004', 'Blusas'),
-(51, '005', 'Bolsos'),
-(52, '006', 'Botas'),
-(53, '007', 'Botines'),
-(54, '008', 'Boxers'),
-(55, '009', 'Bragas'),
-(57, '010', 'Brasieres');
+) ENGINE=MyISAM AUTO_INCREMENT=374 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -64,21 +48,36 @@ CREATE TABLE IF NOT EXISTS `inventario_excel` (
   `cod_inv` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `cod_pro` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `nom_pro` varchar(200) CHARACTER SET utf8 NOT NULL,
+  `price_cost` int(10) NOT NULL,
   `pro_price` int(10) NOT NULL,
   `quantity` int(10) NOT NULL,
+  `store` int(3) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=185 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=271 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
 
 --
--- Volcado de datos para la tabla `inventario_excel`
+-- Estructura de tabla para la tabla `tiendas`
 --
 
-INSERT INTO `inventario_excel` (`id`, `cod_inv`, `cod_pro`, `nom_pro`, `pro_price`, `quantity`) VALUES
-(181, '003', '00001', 'Zapatos para caballeros ', 15000, 200),
-(179, '001', '00001', 'Acostumbradores para niÃ±a', 50000, 25),
-(180, '001', '00002', 'Blusas dama Deportivo', 60000, 200),
-(182, '002', '00001', 'Bermuda Cortas para NiÃ±o', 100, 80),
-(183, '002', '00002', 'Largas para caballero', 60000, 20);
+DROP TABLE IF EXISTS `tiendas`;
+CREATE TABLE IF NOT EXISTS `tiendas` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `store_name` varchar(40) NOT NULL,
+  `store_code` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tiendas`
+--
+
+INSERT INTO `tiendas` (`id`, `store_name`, `store_code`) VALUES
+(1, 'Ragonvalia - Norte de Santander - COL', 1),
+(2, 'Delicias - Estado Tachira - VEN', 2),
+(7, 'Herran - Norte de  Santander - COL', 4),
+(6, 'Chinacota - Norte de  Santander - COL', 3);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

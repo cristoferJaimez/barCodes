@@ -12,6 +12,7 @@ if(isset($_GET['id'])){
               $nom_pro = $row['nom_pro'];
               $cod_inv = $row['cod_inv'];
               $cod_pro =  $row['cod_pro'];
+              $pro_price_cost =$row['price_cost'];
               $pro_price =$row['pro_price'];
               $quantity = $row ['quantity'];
           }
@@ -27,12 +28,13 @@ if(isset($_POST['update_product'])){
     $id = $_GET['id'];
     $nom_pro =  $_POST['nom_pro'];
     $pro_price =  $_POST['pro_price'];
+    $pro_price_cost =  $_POST['price_cost'];
     $quantity = $_POST['quantity'];
 
-      $consulta = "UPDATE inventario_excel  SET nom_pro =:nom_pro, pro_price = :pro_price, quantity = :quantity WHERE id = :id";
+      $consulta = "UPDATE inventario_excel  SET nom_pro =:nom_pro, price_cost = :price_cost, pro_price = :pro_price, quantity = :quantity WHERE id = :id";
         $pdoRes = $conn->prepare($consulta);
         
-        $pdoExc = $pdoRes->execute(array(":nom_pro"=>$nom_pro,":pro_price"=>$pro_price,":quantity"=>$quantity,":id"=>$id));
+        $pdoExc = $pdoRes->execute(array(":nom_pro"=>$nom_pro,":price_cost"=>$pro_price_cost,":pro_price"=>$pro_price,":quantity"=>$quantity,":id"=>$id));
 
          
         if ($pdoExc) { ?>
@@ -76,7 +78,10 @@ if(isset($_POST['update_product'])){
                                     <input type="text" value="<?php echo $cod_inv.$cod_pro; ?>" class="form-control" disabled>
                                     <label for="name_product">Descripci&oacute;n del Producto</label>
                                     <input type="text" name="nom_pro" class="form-control" value="<?php  echo $nom_pro; ?>" placeholder="Ingrese precio del producto" required>
-                                    <label for="name_product">Precio del Producto</label>
+                                    <label for="name_product">Precio Costo de Compra del Producto</label>
+                                    <input type="text" name="price_cost" class="form-control" value="<?php echo $pro_price_cost; ?>" placeholder="Ingrese nombre del producto" required>
+                
+                                    <label for="name_product">Precio del Producto Venta</label>
                                     <input type="text" name="pro_price" class="form-control" value="<?php echo $pro_price; ?>" placeholder="Ingrese nombre del producto" required>
                                     <label for="name_product">Cantidad de Productos</label>
                                     <input type="text" name="quantity" class="form-control" value="<?php echo $quantity;  ?>" placeholder="Ingrese cantidad de productos" required>
